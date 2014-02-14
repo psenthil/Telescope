@@ -111,6 +111,7 @@ Template.post_item.rendered = function(){
 
 };
 
+
 Template.post_item.events({
   'click .upvote-link': function(e, instance){
     var post = this;
@@ -121,6 +122,36 @@ Template.post_item.events({
     }
     Meteor.call('upvotePost', post, function(error, result){
       trackEvent("post upvoted", {'_id': post._id});
+    });
+  },
+  'click .checkedIn-link': function(e, instance){
+    var post = this;
+    e.preventDefault();
+    if(!Meteor.user()){
+      Router.go('/signin');
+      throwError(i18n.t("Please log in first"));
+    }
+    Meteor.call('checkedIn', post, function(error, result){
+    	 var post1 =Posts.findOne({_id: post._id});
+    	  Posts.update({_id:post._id}, { $set: { checkedIn: true }});
+    	 trackEvent("post checkedIN", {'_id': post._id});    
+    });
+  },
+    'click .buffered-link': function(e, instance){
+    var post = this;
+    e.preventDefault();
+    if(!Meteor.user()){
+      Router.go('/signin');
+      throwError(i18n.t("Please log in first"));
+    }
+    Meteor.call('buffered', post, function(error, result){
+    	 var prevState =Posts.findOne({_id: post._id});
+    	 var buffered = prevState.buffered;
+    	 Posts.update({_id:post._id}, { $set: { buffered: !buffered }});
+    	 trackEvent("post buffered", {'_id': post._id});
+    	var post1 =Posts.findOne({_id: post._id});
+    	 trackEvent("from db", post1);
+     
     });
   },
   'click .share-link': function(e){

@@ -264,6 +264,11 @@ h3 {
 .icon-pin:before {
   content: "\70"; }
 
+.icon-checkedIn:before {
+  content: url("/img/triangle_up.png") ; }
+.icon-notcheckedIn:before {
+  content: url("/img/triangle_dn.png") ; }
+
 /* line 57, ../sass/partials/_icons.scss */
 .icon-up:before {
   content: "\2191"; }
@@ -933,6 +938,35 @@ body.pageslide-open {
       -o-border-radius: 3px 0 0 3px;
       border-radius: 3px 0 0 3px;
       border-right: 1px solid #e7eff2; }
+      
+    .post-content .post-checkedIn .checkedIn-link {
+      height: 100%;
+      display: table;
+      float: left;
+      width: 25px;
+   	  line-height: 70px;
+   	  margin: 0 30px;
+      -webkit-border-radius: 3px 0 0 3px;
+      -moz-border-radius: 3px 0 0 3px;
+      -ms-border-radius: 3px 0 0 3px;
+      -o-border-radius: 3px 0 0 3px;
+      border-radius: 3px 0 0 3px;
+      border-right: 1px solid #e7eff2; }
+      
+      .post-content .post-buffered .buffered-link {
+      height: 100%;
+      display: table;
+      float: left;
+      width: 25px;
+   	  line-height: 70px;
+		margin: 0 -30px;
+      -webkit-border-radius: 3px 0 0 3px;
+      -moz-border-radius: 3px 0 0 3px;
+      -ms-border-radius: 3px 0 0 3px;
+      -o-border-radius: 3px 0 0 3px;
+      border-radius: 3px 0 0 3px;
+      border-right: 1px solid #e7eff2; }
+        
       /* line 59, ../sass/modules/_posts.scss */
       .post-content .post-upvote .upvote-link i {
         font-size: 12px;
@@ -970,11 +1004,19 @@ body.pageslide-open {
         .post-content .post-upvote .upvote-link.voted i.icon-check {
           color: #7ac0e4;
           display: table-cell; }
+  /*
+    .post-content .post-checkedIn {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 16px;
+    font-size: 24px; }
+    */
   /* line 97, ../sass/modules/_posts.scss */
   .post-content .post-sticky {
     display: block;
     position: absolute;
-    right: 20px;
+    right: 120px;
     top: 16px;
     font-size: 24px; }
     /* line 103, ../sass/modules/_posts.scss */
@@ -1035,7 +1077,7 @@ body.pageslide-open {
   .post-actions li {
     position: relative;
     float: left;
-    margin-left: 10px; }
+    margin-left: -150px; }
     /* line 157, ../sass/modules/_posts.scss */
     .post-actions li a {
       background: #d8e9f5;

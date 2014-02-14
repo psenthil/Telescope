@@ -3,7 +3,7 @@ Posts = new Meteor.Collection('posts');
 STATUS_PENDING=1;
 STATUS_APPROVED=2;
 STATUS_REJECTED=3;
-
+/*
 Posts.deny({
   update: function(userId, post, fieldNames) {
     if(isAdminById(userId))
@@ -12,7 +12,7 @@ Posts.deny({
     return (_.without(fieldNames, 'headline', 'url', 'body', 'shortUrl', 'shortTitle', 'categories').length > 0);
   }
 });
-
+*/
 Posts.allow({
     insert: canPostById
   , update: canEditById
