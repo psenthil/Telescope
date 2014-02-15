@@ -114,6 +114,7 @@ Template.post_edit.events({
         }else if($('#submitted_date').exists()){
           properties.submitted = parseInt(moment($('#submitted_date').val()+$('#submitted_time').val(), "MM/DD/YYYY HH:mm").valueOf());
         }
+        properties.displayOrder = $('#displayOrder').val()
       }
       adminProperties = {
         sticky:     !!$('#sticky').attr('checked'),

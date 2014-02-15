@@ -47,6 +47,7 @@ Template.post_submit.events({
     var categories=[];
     var sticky=!!$('#sticky').attr('checked');
     var submitted = $('#submitted_hidden').val();
+    var displayOrder = $('#displayOrder').val();
     var userId = $('#postUser').val();
     var status = parseInt($('input[name=status]:checked').val());
 
@@ -61,6 +62,7 @@ Template.post_submit.events({
       , categories: categories
       , sticky: sticky
       , submitted: submitted
+      , displayOrder: displayOrder
       , userId: userId
       , status: status
     };
