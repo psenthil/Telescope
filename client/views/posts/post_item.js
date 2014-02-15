@@ -132,9 +132,11 @@ Template.post_item.events({
       throwError(i18n.t("Please log in first"));
     }
     Meteor.call('checkedIn', post, function(error, result){
-    	 var post1 =Posts.findOne({_id: post._id});
-    	  Posts.update({_id:post._id}, { $set: { checkedIn: true }});
-    	 trackEvent("post checkedIN", {'_id': post._id});    
+   		 var prevState =Posts.findOne({_id: post._id});
+    	 var checkedIn = prevState.checkedIn;
+    	 //var post1 =Posts.findOne({_id: post._id});
+    	  Posts.update({_id:post._id}, { $set: { checkedIn: !checkedIn }});
+    	// trackEvent("post checkedIN", {'_id': post._id});    
     });
   },
     'click .buffered-link': function(e, instance){
@@ -149,8 +151,8 @@ Template.post_item.events({
     	 var buffered = prevState.buffered;
     	 Posts.update({_id:post._id}, { $set: { buffered: !buffered }});
     	 trackEvent("post buffered", {'_id': post._id});
-    	var post1 =Posts.findOne({_id: post._id});
-    	 trackEvent("from db", post1);
+    	//var post1 =Posts.findOne({_id: post._id});
+    	// trackEvent("from db", post1);
      
     });
   },
