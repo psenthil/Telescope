@@ -265,9 +265,14 @@ h3 {
   content: "\70"; }
 
 .icon-checkedIn:before {
-  content: url("/img/triangle_up.png") ; }
+  content: url("/img/check_mark_green1.png") ; }
 .icon-notcheckedIn:before {
-  content: url("/img/triangle_dn.png") ; }
+  content: url("/img/check_mark_grey.png") ; }
+  
+.icon-buffered:before {
+  content: url("/img/hrglass_green.png") ; }
+.icon-notbuffered:before {
+  content: url("/img/hrglass_grey2.png") ; }
 
 /* line 57, ../sass/partials/_icons.scss */
 .icon-up:before {

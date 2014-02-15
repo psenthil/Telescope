@@ -30,16 +30,16 @@
       </div>
      <div class="post-checkedIn">
         {{#if checkedIn}}
-         <a class="checkedIn-link" ><i class="icon-notcheckedIn"></i><span>{{i18n ""}}</span></a>
+         <a class="checkedIn-link" ><i class="icon-checkedIn"></i><span>{{i18n ""}}</span></a>
         {{else}}
-           <a class="checkedIn-link" href="#"><i class="icon-checkedIn"></i><span>{{i18n ""}}</span></a>
+           <a class="checkedIn-link" href="#"><i class="icon-notcheckedIn"></i><span>{{i18n ""}}</span></a>
         {{/if}}
       </div>
         <div class="post-buffered">
         {{#if buffered}}
-         <a class="buffered-link" ><i class="icon-notcheckedIn"></i><span>{{i18n ""}}</span></a>
+         <a class="buffered-link" ><i class="icon-buffered"></i><span>{{i18n ""}}</span></a>
         {{else}}
-           <a class="buffered-link" href="#"><i class="icon-checkedIn"></i><span>{{i18n ""}}</span></a>
+           <a class="buffered-link" href="#"><i class="icon-notbuffered"></i><span>{{i18n ""}}</span></a>
         {{/if}}
       </div>
       <div class="post-info">
